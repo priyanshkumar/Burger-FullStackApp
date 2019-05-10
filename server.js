@@ -12,6 +12,9 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var routes = require("./controller/burger_controller");
+app.use(routes);
+
 app.listen(port, function() {
   console.log(`server running on ${port}`);
 });
