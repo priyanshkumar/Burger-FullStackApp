@@ -6,5 +6,42 @@ body {
 
 .image-style img {
   width: 20%;
-  height: 80%;
 }
+
+.image-style h1 {
+  color: white;
+  font-family: "Lobster", cursive;
+}
+
+.ordered h6 {
+  background-color: #ffffff;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.4rem;
+}
+
+.ordered button {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.2rem;
+  background-color: #c6b1e7c0;
+}
+.devoured p {
+  background-color: #eeeeee;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.2rem;
+}
+
+.row-3 button {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.2rem;
+  background-color: #c6b1e7c0;
+}
+
+.ordered-hide {
+  display: none !important;
+}
+
+.devoured-hide {
+  display: none !important;
+}
+
+
