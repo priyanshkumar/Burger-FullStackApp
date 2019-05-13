@@ -9,23 +9,17 @@ var orm = {
       cb(result);
     });
   },
-  insertOne: function(table, value, cb) {
+  insertOne: function(table, value) {
     var query = "Insert into ?? set ?";
     connection.query(query, [table, value], function(err) {
       if (err) throw err;
-
-      var result = "Updated to Database!";
-      cb(result);
     });
   },
-  updateOne: function(table, set, where, cb) {
+  updateOne: function(table, set, where) {
     var query = "Update ?? set ? where ?";
 
     connection.query(query, [table, set, where], function(err) {
       if (err) throw err;
-
-      var result = "Updated to Database!";
-      cb(result);
     });
   }
 };

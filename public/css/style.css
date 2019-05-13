@@ -1,0 +1,10 @@
+body {
+  background-image: radial-gradient(rgb(236, 67, 45), orange);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.image-style img {
+  width: 20%;
+  height: 80%;
+}
