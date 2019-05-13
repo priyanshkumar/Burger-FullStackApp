@@ -24,13 +24,15 @@ router.post("/", function(req, res) {
         data.devoured.push(result[i]);
       }
     }
+    console.log(data);
     res.render("index", data);
   });
+  // res.send("Inserted!");
 });
 
 router.put("/", function(req, res) {
   var update = req.body;
-  var data = {    
+  var data = {
     ordered: [],
     devoured: []
   };
