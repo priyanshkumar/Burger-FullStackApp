@@ -17,11 +17,13 @@ $(document).ready(function() {
   });
 
   $(".devour").on("click", function() {
-    var id = $(".devour").attr("devour_id");
+    var id = $(this).attr("devour_id");
 
     var where = {
       id: id
     };
+
+    console.log(ids);
     $.ajax({
       method: "PUT",
       url: "/",
