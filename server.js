@@ -2,7 +2,7 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var path = require("path");
 
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 var app = express();
 
 app.use(express.urlencoded({ extended: true }));
