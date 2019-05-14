@@ -6,19 +6,27 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 px-5 mt-3 ordered ordered-hide d-flex justify-content-end">
-            {{#each data.[0].ordered}}
-            <h6 class="w-50 p-2 px-3">{{id}} {{burger_name}}</h6>
-            <button class="ml-3 btn h-75 px-3 py-0 my-0">Devour!!!</button>
+        <div class="col-6">
+            {{#each burgers}}
+            {{#unless devoured}}
+            <div class="px-5 mt-3 ordered d-flex justify-content-end">
+                <h6 class="w-50 p-2 px-3">{{id}}. {{burger_name}}</h6>
+                <button class="devour ml-3 btn h-75 px-3 py-0 my-0" devour_id={{id}}>Devour!!!</button>
+            </div>
+            {{/unless}}
             {{/each}}
         </div>
-        <div class="col-6 devoured devoured-hide px-5 mt-3">
-            {{#each data.devoured}}
-            <p class="w-50 float-left p-1 px-3">{{id}} {{burger_name}}</p>
+        <div class="col-6">
+            {{#each burgers}}
+            {{#if devoured}}
+            <div class="devoured px-5 mt-3">
+                <p class="w-50 d-flex flex-column align-items-start p-1 px-3">{{id}}. {{burger_name}}</p>
+            </div>
+            {{/if}}
             {{/each}}
         </div>
     </div>
-    <div class="row mt-3">
+    <div class="row my-3">
         <div class="col-12 row-3 d-flex flex-column align-items-center">
             <input type="text" class="input form-control w-25">
             <button class="button mt-2 ml-3 btn px-3 my-0">Enter Your Favourite Burger</button>

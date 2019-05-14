@@ -7,14 +7,26 @@ $(document).ready(function() {
     var set = {
       burger_name: text
     };
-
-    $(".ordered").removeClass("ordered-hide");
     $.ajax({
       method: "POST",
       url: "/",
       data: set
-    }).then(function(result) {
-      console.log(result);
+    }).then(function() {
+      location.reload();
     });
+  });
+
+  $(".devour").on("click", function() {
+    var id = $(".devour").attr("devour_id");
+
+    var where = {
+      id: id
+    };
+    $.ajax({
+      method: "PUT",
+      url: "/",
+      data: where
+    });
+    location.reload();
   });
 });

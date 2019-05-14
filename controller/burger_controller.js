@@ -5,49 +5,29 @@ var path = require("path");
 var router = express.Router();
 
 router.get("/", function(req, res) {
-  res.render("../views/index.handlebars");
+  burger.all(function(result) {
+    var data = {
+      burgers: result
+    };
+    res.render("index", data);
+  });
 });
 
 router.post("/", function(req, res) {
   var setValue = req.body;
-  var data = {
-    ordered: [],
-    devoured: []
-  };
 
   burger.insert(setValue);
-  burger.all(function(result) {
-    for (var i = 0; i < result.length; i++) {
-      if (!result[i].devoured) {
-        data.ordered.push(result[i]);
-      } else {
-        data.devoured.push(result[i]);
-      }
-    }
-    console.log(data);
-    res.render("index", data);
-  });
-  // res.send("Inserted!");
+  res.redirect("/");
 });
 
 router.put("/", function(req, res) {
   var update = req.body;
-  var data = {
-    ordered: [],
-    devoured: []
+  var set = {
+    devoured: true
   };
 
-  burger.update(update.set, update.where);
-  burger.all(function(result) {
-    for (var i = 0; i < result.length; i++) {
-      if (!result[i].devoured) {
-        data.ordered.push(result[i]);
-      } else {
-        data.devoured.push(result[i]);
-      }
-    }
-    res.render("index", data);
-  });
+  burger.update(set, update);
+  res.redirect("/");
 });
 
 module.exports = router;
