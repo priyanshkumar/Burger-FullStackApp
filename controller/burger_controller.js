@@ -20,14 +20,15 @@ router.post("/", function(req, res) {
   res.redirect("/");
 });
 
-router.put("/", function(req, res) {
-  var update = req.body;
+router.put("/burger/:id", function(req, res) {
+  var update = { id: req.params.id };
+
   var set = {
     devoured: true
   };
 
   burger.update(set, update);
-  res.redirect("/");
+  res.sendStatus(200);
 });
 
 module.exports = router;

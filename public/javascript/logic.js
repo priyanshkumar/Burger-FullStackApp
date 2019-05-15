@@ -19,14 +19,11 @@ $(document).ready(function() {
   $(".devour").on("click", function() {
     var id = $(this).attr("devour_id");
 
-    var where = {
-      id: id
-    };
     $.ajax({
       method: "PUT",
-      url: "/",
-      data: where
+      url: "/burger/" + id
+    }).then(function() {
+      location.reload();
     });
-    location.reload();
   });
 });
