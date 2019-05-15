@@ -22,8 +22,6 @@ $(document).ready(function() {
     var where = {
       id: id
     };
-
-    console.log(ids);
     $.ajax({
       method: "PUT",
       url: "/",
